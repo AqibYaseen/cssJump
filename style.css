@@ -139,10 +139,10 @@ animation: enemyA 2s infinite linear;
 
     }
     45%{
-        top:35%;
+        top:30%;
     }
     60%{
-        top: 35%;
+        top: 30%;
     }
     100%{
         top: 62%;
