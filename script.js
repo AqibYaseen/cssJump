@@ -1,9 +1,14 @@
 let enemy =document.getElementById("enemy");
+let jumpAudio = document.querySelector("#jumpAudio");
+let deathAudio = document.querySelector("#deathSound");
+let blood = document.querySelector("#blood");
+blood.style.display="none";
 
-document.getElementById("player").addEventListener("click",()=>{
+document.getElementById("jump").addEventListener("click",()=>{
 
     if(document.getElementById("player").classList != "jump"){
     document.getElementById("player").classList.add("jump");
+    jumpAudio.play();
     // console.log(document.getElementById("player").getBoundingClientRect());
     // console.log(document.getElementById("enemy").getBoundingClientRect());
 }
@@ -22,9 +27,11 @@ setInterval(() => {
         let playerL = parseInt(window.getComputedStyle(document.querySelector("#player")).getPropertyValue("top"));
         console.clear();
         console.log(enemyL , playerL);
-        if(enemyL < 100 && playerL > 350){
+        if(enemyL < 100 && playerL > 250){
             enemy.classList.remove("enemyAnim");
-            document.querySelector("#canvas").style.backgroundColor="red";
+            deathAudio.play();
+            blood.style.display="inline-block"
+            // document.querySelector("#canvas").style.backgroundColor="red";
             document.querySelector("h3").innerText="Game Over!!";
             document.querySelector("#player").classList.remove("jump");
         return;

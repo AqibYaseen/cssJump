@@ -10,11 +10,19 @@
 <body>
         <a target="_blank" href="https://github.com/AqibYaseen/cssJump">Click Here For Code!</a>
         <div id="canvas">
-            <div id="gameOver"><h3>Tap on the player to jump!!</h3><button onclick="reload()" id="reload">Replay</button></div>
+            <img src="./sprites/blood.gif" id="blood" alt="">
+            <img src="./sprites/background.gif" id="backgroundMove" alt="">
+            <div id="gameOver"><h3>Tap on the button to jump!!</h3><button onclick="reload()" id="reload">Replay</button></div>
             <img src="./sprites/player.gif" id="player"></img> 
             <img src="./sprites/enemy.gif" class="enemyAnim" id="enemy"></img>
         </div>
     <div id="position"></div>
+    <button id="jump">Jump</button>
+    <audio id="jumpAudio" src="./sounds/jump.mp3"></audio>
+    <audio controls>
+        <source src="./sounds/backgroundMusic.mp3">
+    </audio>
+    <audio id="deathSound" src="./sounds/deathmario.mp3"></audio>
     <script src="./script.js"></script>
 </body>
 </html>
