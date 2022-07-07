@@ -134,6 +134,11 @@ animation: enemyA 2s infinite linear;
     animation: playerA 1s infinite ease-out;
 
 }
+#players{
+    position: absolute;
+    left: 50%;
+    top: 0;
+}
 @keyframes playerA {
     0%{
 

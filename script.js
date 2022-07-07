@@ -2,6 +2,7 @@ let enemy =document.getElementById("enemy");
 let jumpAudio = document.querySelector("#jumpAudio");
 let deathAudio = document.querySelector("#deathSound");
 let blood = document.querySelector("#blood");
+let players = document.querySelector("#players");
 blood.style.display="none";
 
 document.getElementById("jump").addEventListener("click",()=>{
@@ -16,6 +17,7 @@ document.getElementById("jump").addEventListener("click",()=>{
         document.getElementById("player").classList.remove("jump");
     }, 1000);
 });
+
 setInterval(() => {
     document.querySelector("#position").innerHTML=` Enemy  ${parseInt(window.getComputedStyle(enemy).getPropertyValue("left"))}`;
     document.querySelector("#position").innerHTML+=` <br/> player ${parseInt(window.getComputedStyle(document.querySelector("#player")).getPropertyValue("top"))}`;
@@ -25,8 +27,8 @@ setInterval(() => {
     // if( < 100 && parseInt(window.getComputedStyle(document.querySelector("#player").getPropertyValue("top")) > 350)){
         let enemyL = parseInt(window.getComputedStyle(document.querySelector("#enemy")).getPropertyValue("left"));
         let playerL = parseInt(window.getComputedStyle(document.querySelector("#player")).getPropertyValue("top"));
-        console.clear();
-        console.log(enemyL , playerL);
+        // console.clear();
+        // console.log(enemyL , playerL);
         if(enemyL < 100 && playerL > 250){
             enemy.classList.remove("enemyAnim");
             deathAudio.play();
@@ -37,7 +39,10 @@ setInterval(() => {
         return;
     }}, 1);
     
-
+    players.addEventListener("click",function (e){
+        console.log(document.getElementById("player")); 
+        document.getElementById("player").src= e.target.src;
+    });
     function reload(){
         window.location.reload();
     }
