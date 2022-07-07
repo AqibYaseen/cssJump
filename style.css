@@ -121,10 +121,7 @@ button{
     /* background-color: red; */
     z-index: 10;
 }
-.enemyAnim2{
-animation: enemyA 1s infinite linear;
 
-}
 .enemyAnim{
 
 animation: enemyA 2s infinite linear;
@@ -136,8 +133,28 @@ animation: enemyA 2s infinite linear;
 }
 #players{
     position: absolute;
-    left: 50%;
+    left: 900px;
     top: 0;
+}
+#start{
+    margin-left: 0;
+    left: 20px;
+
+}
+#mute{
+    left: 80px;
+
+}
+#score{
+    /* background-color: red; */
+
+    position: absolute;
+    top: 10px;
+    font-size: 1.5rem;
+    width: 299px;
+    font-weight: 100;
+    left: 89%;
+    color: black;
 }
 @keyframes playerA {
     0%{
